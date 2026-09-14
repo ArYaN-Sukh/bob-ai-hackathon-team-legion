@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "trialguard": {
+      "type": "http",
+      "url": "http://localhost:8000/mcp",
+      "description": "TrialGuard — Clinical Trial Risk Monitor & Protocol Deviation Detector. Provides tools to query site risk scores, protocol deviations, patient timelines, and generate CAPA reports using watsonx.ai."
+    }
+  }
+}

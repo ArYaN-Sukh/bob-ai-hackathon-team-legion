@@ -1,0 +1,295 @@
+{
+  "_comment": "SYNTHETIC DEMO DATA — This protocol is entirely fictitious and is used solely for the IBM Bob AI Hackathon TrialGuard demo. It does not represent any real clinical trial, compound, or patient population.",
+  "trial_id": "TRIAL-TG-001",
+  "version": "2.1",
+  "title": "Phase II Study of Compound XR-447 in Advanced Non-Small Cell Lung Cancer",
+  "sponsor": "TrialGuard Demo Sponsor Corp. (SYNTHETIC)",
+  "phase": "II",
+  "indication": "Advanced Non-Small Cell Lung Cancer (NSCLC)",
+  "start_date": "2023-01-15",
+  "end_date": "2025-06-30",
+  "target_enrollment": 120,
+  "primary_endpoint": "Progression-Free Survival at 6 months",
+  "secondary_endpoints": [
+    "Overall Response Rate",
+    "Overall Survival",
+    "Safety and Tolerability"
+  ],
+
+  "inclusion_criteria": [
+    {
+      "rule_id": "INC-01",
+      "description": "Patient age must be between 18 and 75 years (inclusive) at time of enrollment",
+      "field": "patient.age",
+      "operator": "between",
+      "values": [18, 75],
+      "severity_if_violated": "Major",
+      "rationale": "Compound XR-447 has not been studied in pediatric or elderly populations beyond age 75 due to altered drug metabolism"
+    },
+    {
+      "rule_id": "INC-02",
+      "description": "ECOG Performance Status of 0, 1, or 2 at screening",
+      "field": "patient.ecog_score",
+      "operator": "lte",
+      "value": 2,
+      "severity_if_violated": "Major",
+      "rationale": "Patients with ECOG PS 3-4 are unlikely to tolerate study treatment and may confound safety assessments"
+    },
+    {
+      "rule_id": "INC-03",
+      "description": "Confirmed histological or cytological diagnosis of advanced NSCLC (Stage IIIB or IV)",
+      "field": "patient.diagnosis_confirmed",
+      "operator": "eq",
+      "value": true,
+      "severity_if_violated": "Major",
+      "rationale": "Eligibility requires confirmed NSCLC diagnosis prior to enrollment"
+    },
+    {
+      "rule_id": "INC-04",
+      "description": "Adequate bone marrow function: Absolute Neutrophil Count >= 1.5 x 10^9/L at screening",
+      "field": "lab.anc",
+      "operator": "gte",
+      "value": 1.5,
+      "unit": "x10^9/L",
+      "severity_if_violated": "Major",
+      "rationale": "ANC below threshold indicates bone marrow insufficiency incompatible with chemotherapy administration"
+    },
+    {
+      "rule_id": "INC-05",
+      "description": "Signed and dated Informed Consent Form (ICF) prior to any study-related procedure",
+      "field": "patient.consent_signed_before_procedure",
+      "operator": "eq",
+      "value": true,
+      "severity_if_violated": "Major",
+      "rationale": "GCP ICH E6 requirement: consent must precede all study procedures"
+    }
+  ],
+
+  "exclusion_criteria": [
+    {
+      "rule_id": "EXC-01",
+      "description": "Prior treatment with any EGFR/ALK inhibitor within 28 days before enrollment",
+      "field": "patient.prior_egfr_alk_treatment_days",
+      "operator": "gte",
+      "value": 28,
+      "severity_if_violated": "Major",
+      "rationale": "Prior targeted therapy may confound efficacy assessments and increase toxicity risk"
+    },
+    {
+      "rule_id": "EXC-02",
+      "description": "Active uncontrolled systemic infection at time of enrollment",
+      "field": "patient.active_infection",
+      "operator": "eq",
+      "value": true,
+      "severity_if_violated": "Major",
+      "rationale": "Active infection would confound safety assessments and may worsen with immunosuppressive study treatment"
+    },
+    {
+      "rule_id": "EXC-03",
+      "description": "Pregnancy or breastfeeding at time of enrollment",
+      "field": "patient.pregnant_or_breastfeeding",
+      "operator": "eq",
+      "value": true,
+      "severity_if_violated": "Major",
+      "rationale": "Compound XR-447 is teratogenic in animal models; not to be administered to pregnant or nursing women"
+    }
+  ],
+
+  "visit_schedule": [
+    {
+      "visit_number": 1,
+      "name": "Screening",
+      "nominal_day": -14,
+      "window_days_before": 0,
+      "window_days_after": 3,
+      "required_assessments": [
+        "informed_consent",
+        "medical_history",
+        "demographics",
+        "vitals",
+        "physical_exam",
+        "ecog_score",
+        "labs_hematology",
+        "labs_chemistry",
+        "ecg",
+        "pregnancy_test",
+        "tumor_assessment"
+      ],
+      "description": "Screening visit to confirm eligibility. Must occur within 14 days before Day 1."
+    },
+    {
+      "visit_number": 2,
+      "name": "Baseline / Day 1",
+      "nominal_day": 0,
+      "window_days_before": 1,
+      "window_days_after": 1,
+      "required_assessments": [
+        "vitals",
+        "physical_exam",
+        "ecog_score",
+        "labs_hematology",
+        "labs_chemistry",
+        "ecg",
+        "dosing_cycle1_day1",
+        "concomitant_medications"
+      ],
+      "description": "First dose administration. Window is tight (±1 day) due to dosing schedule dependency."
+    },
+    {
+      "visit_number": 3,
+      "name": "Cycle 1 Day 15",
+      "nominal_day": 14,
+      "window_days_before": 2,
+      "window_days_after": 2,
+      "required_assessments": [
+        "vitals",
+        "physical_exam",
+        "labs_hematology",
+        "labs_chemistry",
+        "adverse_event_review",
+        "concomitant_medications"
+      ],
+      "description": "Mid-cycle safety check. AE review is mandatory."
+    },
+    {
+      "visit_number": 4,
+      "name": "Cycle 1 End / Efficacy Assessment",
+      "nominal_day": 28,
+      "window_days_before": 3,
+      "window_days_after": 3,
+      "required_assessments": [
+        "vitals",
+        "physical_exam",
+        "ecog_score",
+        "labs_hematology",
+        "labs_chemistry",
+        "ecg",
+        "tumor_assessment",
+        "adverse_event_review",
+        "concomitant_medications",
+        "dosing_compliance_review"
+      ],
+      "description": "End-of-cycle efficacy and safety assessment. Tumor assessment is the primary endpoint measurement."
+    }
+  ],
+
+  "lab_thresholds": [
+    {
+      "rule_id": "LAB-01",
+      "test_name": "hemoglobin",
+      "display_name": "Hemoglobin",
+      "min_value": 8.0,
+      "max_value": null,
+      "unit": "g/dL",
+      "severity_if_violated": "Major",
+      "action_required": "Dose hold; notify Principal Investigator immediately",
+      "rationale": "Hemoglobin < 8.0 g/dL indicates severe anemia requiring dose modification per protocol Section 7.3"
+    },
+    {
+      "rule_id": "LAB-02",
+      "test_name": "anc",
+      "display_name": "Absolute Neutrophil Count",
+      "min_value": 1.0,
+      "max_value": null,
+      "unit": "x10^9/L",
+      "severity_if_violated": "Major",
+      "action_required": "Dose hold; recheck in 7 days",
+      "rationale": "ANC < 1.0 x10^9/L indicates Grade 3 neutropenia; dosing must be suspended per protocol Section 7.3"
+    },
+    {
+      "rule_id": "LAB-03",
+      "test_name": "creatinine",
+      "display_name": "Serum Creatinine",
+      "min_value": null,
+      "max_value": 1.5,
+      "unit": "mg/dL",
+      "severity_if_violated": "Minor",
+      "action_required": "Document and monitor; consider dose reduction if persistent",
+      "rationale": "Creatinine > 1.5 mg/dL may indicate impaired renal function affecting drug clearance"
+    },
+    {
+      "rule_id": "LAB-04",
+      "test_name": "alt",
+      "display_name": "Alanine Aminotransferase (ALT)",
+      "min_value": null,
+      "max_value": 80.0,
+      "unit": "U/L",
+      "severity_if_violated": "Minor",
+      "action_required": "Document; repeat in 2 weeks; notify PI if > 3x ULN",
+      "rationale": "ALT elevation may indicate hepatotoxicity; must be monitored per protocol Section 7.4"
+    },
+    {
+      "rule_id": "LAB-05",
+      "test_name": "platelets",
+      "display_name": "Platelet Count",
+      "min_value": 75.0,
+      "max_value": null,
+      "unit": "x10^9/L",
+      "severity_if_violated": "Major",
+      "action_required": "Dose hold; assess for bleeding risk; notify PI",
+      "rationale": "Platelet count < 75 x10^9/L indicates Grade 3 thrombocytopenia; dosing suspended per Section 7.3"
+    }
+  ],
+
+  "dosing_rules": [
+    {
+      "rule_id": "DOS-01",
+      "description": "Study drug must be administered within a 4-hour window of a meal (within 2 hours before or 2 hours after eating)",
+      "field": "dosing.hours_from_meal",
+      "operator": "lte",
+      "value": 2.0,
+      "unit": "hours",
+      "severity_if_violated": "Minor",
+      "rationale": "Bioavailability of Compound XR-447 is significantly impaired when taken in a fasted state"
+    },
+    {
+      "rule_id": "DOS-02",
+      "description": "Maximum allowed dose delay: study drug must not be delayed more than 3 days from scheduled dosing date without PI notification and protocol deviation documentation",
+      "field": "dosing.delay_days",
+      "operator": "lte",
+      "value": 3,
+      "unit": "days",
+      "severity_if_violated": "Major",
+      "rationale": "Dose delays > 3 days may compromise treatment efficacy and require formal deviation documentation"
+    },
+    {
+      "rule_id": "DOS-03",
+      "description": "Dose reduction must be documented in source documents and eCRF within 48 hours of occurrence",
+      "field": "dosing.reduction_documentation_hours",
+      "operator": "lte",
+      "value": 48,
+      "unit": "hours",
+      "severity_if_violated": "Administrative",
+      "rationale": "GCP requires timely documentation of dose modifications to ensure data integrity"
+    }
+  ],
+
+  "reporting_rules": [
+    {
+      "rule_id": "REP-01",
+      "description": "Serious Adverse Events (SAEs) must be reported to the Sponsor within 24 hours of the investigator becoming aware of the event",
+      "field": "adverse_event.reporting_delay_hours",
+      "operator": "lte",
+      "value": 24,
+      "unit": "hours",
+      "severity_if_violated": "Major",
+      "rationale": "ICH E6 GCP Section 4.11.1 and regulatory requirement: SAE reporting within 24 hours is mandatory. Late reporting is a critical finding in FDA inspections."
+    },
+    {
+      "rule_id": "REP-02",
+      "description": "Protocol deviations must be documented within 5 business days of discovery",
+      "field": "deviation.documentation_delay_days",
+      "operator": "lte",
+      "value": 5,
+      "unit": "days",
+      "severity_if_violated": "Administrative",
+      "rationale": "Timely documentation of deviations supports audit trail integrity per ICH E6"
+    }
+  ],
+
+  "severity_definitions": {
+    "Major": "A deviation that may have a direct impact on patient safety, the rights or well-being of the subject, the validity of the study data, or the conduct of the study in compliance with GCP. Requires immediate CAPA.",
+    "Minor": "A deviation from the protocol that is unlikely to have a significant effect on patient safety or data integrity but departs from the approved protocol. Requires documentation and monitoring.",
+    "Administrative": "A procedural or documentation deviation with no clinical impact. Requires documentation but no formal CAPA unless recurring."
+  }
+}

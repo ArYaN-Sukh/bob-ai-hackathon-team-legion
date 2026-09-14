@@ -1,0 +1,69 @@
+team:
+  name: "Team Legion"
+  track: "AI"
+  lead:
+    name: "Team Legion Lead"
+    email: "team-legion@example.com"
+  members:
+    - name: "Team Legion Member 1"
+      email: "member1@example.com"
+    - name: "Team Legion Member 2"
+      email: "member2@example.com"
+    - name: "Team Legion Member 3"
+      email: "member3@example.com"
+
+submission:
+  title: "TrialGuard"
+
+  problem_statement: >
+    Clinical trial protocol deviations — missed visits, eligibility breaches, unreported SAEs — 
+    can invalidate study results, endanger patients, and trigger costly FDA enforcement action.
+    Clinical Research Associates spend 60% of monitoring time manually cross-checking patient 
+    records against protocol PDFs, leaving little capacity for proactive risk management across 
+    multi-site global trials.
+
+  solution_summary: >
+    TrialGuard is a Clinical Trial Risk Monitor and Protocol Deviation Detector that uses a 
+    deterministic rule engine to compare patient/visit/lab records against a versioned protocol 
+    JSON and automatically classify deviations by severity. Site-level risk scores surface 
+    the highest-priority sites for monitoring. IBM Bob (via MCP integration) answers natural 
+    language queries about site risk and generates CAPA narratives using watsonx.ai Granite.
+
+  key_features:
+    - "Deterministic deviation detection engine: 7 rule categories (eligibility, visit window, lab thresholds, SAE reporting, dosing, missing assessments) — zero AI in compliance decisions for GCP auditability"
+    - "Site risk scoring with weighted formula (major×10 + minor×3 + CAPA age) producing High/Medium/Low tier classification with explainable component breakdown"
+    - "IBM Bob MCP server exposing 6 tools (get_site_risk_detail, query_deviations, generate_capa, get_protocol_rule, analyse_site_trends, get_patient_timeline) for natural language clinical operations queries"
+    - "watsonx.ai Granite-powered CAPA narrative generation from deviation context — graceful fallback template when API unavailable"
+    - "React + TypeScript dashboard: site risk heatmap, patient visit timeline with deviation badges, filterable deviation log, CAPA editor, and Bob chat interface"
+
+  tech_stack:
+    languages: ["Python", "TypeScript"]
+    frameworks: ["FastAPI", "React", "SQLAlchemy", "TanStack Query", "Tailwind CSS"]
+    ibm_technologies: ["watsonx.ai (Granite-13B)", "IBM Bob (MCP integration)"]
+    databases: ["SQLite"]
+    other: ["Vite", "pytest", "uvicorn", "pydantic-settings", "recharts", "MCP JSON-RPC 2.0"]
+
+  what_we_are_most_proud_of: >
+    The architectural separation between the deterministic compliance engine and the AI narrative 
+    layer. Clinical trial compliance decisions (deviation detection, severity classification, risk 
+    scoring) are 100% rule-based and auditable — essential for GCP-regulated software. AI is 
+    used exclusively for what it does best: generating readable CAPA narratives and answering 
+    natural language questions about structured data via IBM Bob. The IBM Bob MCP integration 
+    is genuinely functional: Bob can query live deviation data, explain site risk scores using 
+    real component breakdowns, and draft CAPA reports — all from conversational prompts.
+
+  known_limitations: >
+    The demo uses SQLite with synthetic data rather than a production database. The watsonx.ai 
+    integration requires a real IBM Cloud API key to produce AI-generated CAPA text (fallback 
+    templates are shown otherwise). The frontend is a fully functional SPA but has not been 
+    deployed to a public URL. The risk formula weights are illustrative and would require 
+    clinical validation before use in a real GCP environment.
+
+artifacts:
+  source_code: "src/"
+  setup_guide: "docs/setup-guide.md"
+  architecture_doc: "docs/architecture.md"
+  demo_video: "demo/demo-video-link.txt"
+  live_demo: "demo/live-demo-url.txt"
+  screenshots: "demo/screenshots/"
+  presentation: "presentation/"

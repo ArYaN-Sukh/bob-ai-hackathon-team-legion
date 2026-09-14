@@ -1,0 +1,7 @@
+{
+  "name": "trialguard-vercel",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix src/frontend ci && npm --prefix src/frontend run build"
+  }
+}
