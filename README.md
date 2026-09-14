@@ -3,6 +3,17 @@
 
 ---
 
+## 👥 Team
+
+| Field | Value |
+|---|---|
+| Team Name | Team Legion |
+| Track | AI |
+| Team Lead | [ACTUAL TEAM LEAD NAME] — [ACTUAL EMAIL] |
+| Members | [ACTUAL MEMBER 1], [ACTUAL MEMBER 2], [ACTUAL MEMBER 3] |
+
+---
+
 ## Overview
 
 **TrialGuard** is an AI-augmented Clinical Trial Risk Monitor that automatically detects protocol deviations, classifies them by severity, scores sites for monitoring priority, and generates CAPA reports — all integrated with IBM Bob via Model Context Protocol (MCP).
