@@ -9,8 +9,8 @@
 |---|---|
 | Team Name | Team Legion |
 | Track | AI |
-| Team Lead | [ACTUAL TEAM LEAD NAME] — [ACTUAL EMAIL] |
-| Members | [ACTUAL MEMBER 1], [ACTUAL MEMBER 2], [ACTUAL MEMBER 3] |
+| Team Lead | [Rohit Gohil] — [ACTUAL EMAIL] |
+| Members | [Aryan Sukhadia], [Ved Vyas], [Aditya Shevale] |
 
 ---
 
