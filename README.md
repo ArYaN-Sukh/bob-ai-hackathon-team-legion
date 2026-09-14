@@ -69,7 +69,7 @@ Full setup instructions: [docs/setup-guide.md](docs/setup-guide.md)
 
 **[Open TrialGuard Live Demo](https://bob-ai-hackathon-team-legion-kohl.vercel.app)**
 
-**[View Source on GitHub](https://github.com/ArYaN-Sukh/bob-ai-hackathon-team-legion)**
+**[View Demo Video on Youtube](https://youtu.be/y_KLZJUZFHQ)**
 
 
 ---
