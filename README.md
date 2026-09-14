@@ -65,11 +65,28 @@ Full setup instructions: [docs/setup-guide.md](docs/setup-guide.md)
 
 ---
 
-## 🚀 Live Demo
+## 🖥️ Live Demo
 
-**[Open TrialGuard Live Demo](https://bob-ai-hackathon-team-legion-kohl.vercel.app)**
+| Demo Video | Live Demo |
+|---|---|
+| [🎥 Watch Demo on YouTube](https://youtu.be/y_KLZJUZFHQ) | [🌐 Open Live Demo](https://bob-ai-hackathon-team-legion-kohl.vercel.app) |
 
-**[View Demo Video on Youtube](https://youtu.be/y_KLZJUZFHQ)**
+
+## 📸 Screenshots
+
+| Dashboard | Site Risk & Deviations |
+|---|---|
+| <img src="demo/screenshots/Screenshot%202026-09-15%20032320.png" alt="TrialGuard Dashboard" width="500"> | <img src="demo/screenshots/Screenshot%202026-09-15%20032335.png" alt="Site Risk and Deviations" width="500"> |
+
+| Patient Timeline | Ask Bob |
+|---|---|
+| <img src="demo/screenshots/Screenshot%202026-09-15%20032402.png" alt="Patient Timeline" width="500"> | <img src="demo/screenshots/Screenshot%202026-09-15%20032412.png" alt="Ask Bob" width="500"> |
+
+## 🖥️ Presentation
+
+| Presentation |
+|---|
+| 📊 **[View TrialGuard Hackathon Presentation](presentation/slides.pptx)** |
 
 
 ---
