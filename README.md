@@ -9,7 +9,7 @@
 |---|---|
 | Team Name | Team Legion |
 | Track | AI |
-| Team Lead | [Rohit Gohil] — [24bph019@gmail.com] |
+| Team Lead | [Rohit Gohil] — [24bph019@charusat.edu.in] |
 | Members | [Aryan Sukhadia], [Ved Vyas], [Aditya Shevale] |
 
 ---
