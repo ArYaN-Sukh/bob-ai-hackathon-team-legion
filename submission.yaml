@@ -2,15 +2,15 @@ team:
   name: "Team Legion"
   track: "AI"
   lead:
-    name: "Team Legion Lead"
-    email: "team-legion@example.com"
+    name: "Rohit Gohil"
+    email: "24bph019@charusat.edu.in"
   members:
-    - name: "Team Legion Member 1"
-      email: "member1@example.com"
-    - name: "Team Legion Member 2"
-      email: "member2@example.com"
-    - name: "Team Legion Member 3"
-      email: "member3@example.com"
+    - name: "Aryan Sukhadia"
+      email: "24bph103@charusat.edu.in"
+    - name: "Ved Vyas"
+      email: "24bph110@charusat.edu.in"
+    - name: "Aditya Shevale"
+      email: "24bph101@charusat.edu.in"
 
 submission:
   title: "TrialGuard"
